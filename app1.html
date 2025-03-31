@@ -34,18 +34,18 @@
 	<!-- touch-action="none" for best results from PEP -->
 	<div>
 	    DEBUG
-	    <a id="btn" download="sample.txt" href="#">ダウンロード</a>
+	    <a id="btn" download="sample.txt">ダウンロード</a>
 	    TEST
 	</div>
 
 	<script>
-	var mesh;
-	//var blob;
+	/*
 	const btn = document.getElementById('btn');
         btn.addEventListener('click', function() {
             const blob = new Blob(['こんにちは'], { "type" : "text/plain" });
             btn.href = window.URL.createObjectURL(blob);   
         })
+	*/
 		
         const canvas = document.getElementById("renderCanvas"); // Get the canvas element
         const engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
@@ -56,8 +56,13 @@
             const scene = new BABYLON.Scene(engine);  
 
             //BABYLON.ImportMeshAsync("https://assets.babylonjs.com/meshes/box.babylon");
-	    mesh = BABYLON.MeshBuilder.CreateBox("box", {});
+	    const mesh = BABYLON.MeshBuilder.CreateBox("box", {});
 	    //blob = new Blob([JSON.stringify(mesh)], {type: "application/json",});
+	    const btn = document.getElementById('btn');
+                btn.addEventListener('click', function() {
+                const blob = new Blob([JSON.stringify(mesh)], { "type" : "application/json" });
+                btn.href = window.URL.createObjectURL(blob);   
+            })
 
             const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 15, new BABYLON.Vector3(0, 0, 0));
             camera.attachControl(canvas, true);
