@@ -57,12 +57,12 @@
             const scene = new BABYLON.Scene(engine);  
 
             //BABYLON.ImportMeshAsync("https://assets.babylonjs.com/meshes/box.babylon");
-	    mesh = BABYLON.MeshBuilder.CreateBox("box", {});
+	    //mesh = BABYLON.MeshBuilder.CreateBox("box", {});
 	    //blob = new Blob([JSON.stringify(mesh)], {type: "application/json",});
 	    const btn = document.getElementById('btn');
-                btn.addEventListener('click', function() {
-		const obj = { hello: "world" };
-                const blob = new Blob([JSON.stringify(obj)], { "type" : "application/json" });
+            btn.addEventListener('click', function() {
+		mesh = BABYLON.MeshBuilder.CreateBox("box", {});
+                const blob = new Blob([JSON.stringify(mesh)], { "type" : "application/json" });
 	        //const blob = new Blob(['こんにちは'], { "type" : "text/plain" });
                 btn.href = window.URL.createObjectURL(blob);   
             })
