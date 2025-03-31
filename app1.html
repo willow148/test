@@ -39,7 +39,7 @@
 	</div>
 
 	<script>
-	var mesh;
+	//var mesh;
 	/*
 	const btn = document.getElementById('btn');
         btn.addEventListener('click', function() {
@@ -57,8 +57,11 @@
             const scene = new BABYLON.Scene(engine);  
 
             //BABYLON.ImportMeshAsync("https://assets.babylonjs.com/meshes/box.babylon");
-	    //mesh = BABYLON.MeshBuilder.CreateBox("box", {});
+	    const mesh = BABYLON.MeshBuilder.CreateBox("box", {});
+	    const jsonmesh = JSON.stringify(mesh);
+	    alert(jsonmesh);
 	    //blob = new Blob([JSON.stringify(mesh)], {type: "application/json",});
+	    /*
 	    const btn = document.getElementById('btn');
             btn.addEventListener('click', function() {
 		mesh = BABYLON.MeshBuilder.CreateBox("box", {});
@@ -66,6 +69,7 @@
 	        //const blob = new Blob(['こんにちは'], { "type" : "text/plain" });
                 btn.href = window.URL.createObjectURL(blob);   
             })
+	    */
 
             const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 15, new BABYLON.Vector3(0, 0, 0));
             camera.attachControl(canvas, true);
