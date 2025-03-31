@@ -39,6 +39,7 @@
 	</div>
 
 	<script>
+	var mesh;
 	/*
 	const btn = document.getElementById('btn');
         btn.addEventListener('click', function() {
@@ -56,12 +57,12 @@
             const scene = new BABYLON.Scene(engine);  
 
             //BABYLON.ImportMeshAsync("https://assets.babylonjs.com/meshes/box.babylon");
-	    const mesh = BABYLON.MeshBuilder.CreateBox("box", {});
+	    mesh = BABYLON.MeshBuilder.CreateBox("box", {});
 	    //blob = new Blob([JSON.stringify(mesh)], {type: "application/json",});
 	    const btn = document.getElementById('btn');
                 btn.addEventListener('click', function() {
-                //const blob = new Blob([JSON.stringify(mesh)], { "type" : "application/json" });
-	        const blob = new Blob(['こんにちは'], { "type" : "text/plain" });
+                const blob = new Blob([JSON.stringify(mesh)], { "type" : "application/json" });
+	        //const blob = new Blob(['こんにちは'], { "type" : "text/plain" });
                 btn.href = window.URL.createObjectURL(blob);   
             })
 
