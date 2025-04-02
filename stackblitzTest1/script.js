@@ -1,11 +1,4 @@
 
-
-function showMessage() {
-    document.getElementById('message').textContent = '外部スクリプトからこんにちは！';
-    document.getElementById("console").innerHTML = "AAA";
-    //consoleTest();
-}
-
 function consoleTest() {
     /*
     for (let arg of args) {
@@ -17,6 +10,11 @@ function consoleTest() {
     document.getElementById("console").innerHTML = "AAA";
 }
 
+function showMessage() {
+    document.getElementById('message').textContent = '外部スクリプトからこんにちは！';
+    
+    consoleTest();
+}
 
 /*
         // ページ読み込み時のイベントを登録
