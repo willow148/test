@@ -1,5 +1,5 @@
 
-console.log = (...args) => {
+function consoleTest(...args) {
     for (let arg of args) {
         // console.logに入力された文字列を改行つきで保持
         outstr = outstr + arg + "<br>";
@@ -9,4 +9,4 @@ console.log = (...args) => {
 }
 
 
-console.log('Hello!');
+consoleTest('Hello!');
