@@ -1,5 +1,5 @@
 
-function consoleLog(args) {
+function console.log(args) {
     
     let outstr = "";
     for (let arg of args) {
@@ -14,7 +14,7 @@ function consoleLog(args) {
 function showMessage() {
     document.getElementById('message').textContent = '外部スクリプトからこんにちは！';
     
-    consoleLog(["あああああああああああああああああ"]);
+    console.log(["あああああああああああああああああ"]);
 }
 
 /*
