@@ -1,4 +1,4 @@
-/*
+
 function consoleTest(...args) {
     for (let arg of args) {
         // console.logに入力された文字列を改行つきで保持
@@ -9,10 +9,9 @@ function consoleTest(...args) {
 }
 
 
-consoleTest('Hello!');
-*/
 
 
+/*
         // ページ読み込み時のイベントを登録
         window.onload = function () {
             // ブラウザ上に表示する文字列を保持する一時変数
@@ -34,4 +33,4 @@ consoleTest('Hello!');
             //    console.log(i);
             //}
         }
-  
+  */
