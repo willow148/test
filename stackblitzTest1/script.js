@@ -6,6 +6,7 @@ function consoleTest(...args) {
     }
     // HTMLのid="console"に対して文字列outstrを設定する
     document.getElementById("console").innerHTML = "AAA";
+    alert("bbb");
 }
 
 
