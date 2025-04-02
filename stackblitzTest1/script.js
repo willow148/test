@@ -1,4 +1,9 @@
 
+
+function showMessage() {
+    document.getElementById('message').textContent = '外部スクリプトからこんにちは！';
+}
+/*
 function consoleTest(...args) {
     alert("bbb");
     for (let arg of args) {
@@ -10,7 +15,7 @@ function consoleTest(...args) {
     alert("ccc");
 }
 
-
+*/
 
 
 /*
