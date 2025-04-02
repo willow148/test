@@ -8,18 +8,38 @@
       Need a visual blank slate?
       Remove all code in `styles.css`!
     -->
+    <!--
     <link rel="stylesheet" href="styles.css" />
+    -->
+    <style>
+      html,
+      body {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #renderCanvas {
+        width: 100%;
+        height: 90%;
+        touch-action: none;
+      }
+    </style>
+    
     <script src="https://cdn.babylonjs.com/babylon.js"></script>
     <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
     <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
     <script src="script.js"></script>
   </head>
   <body>
-    <h1>BabylonTest1</h1>
+    <h1>BabylonTest2</h1>
     <div style="height:90%">
       <canvas id="renderCanvas" touch-action="none"></canvas>
     </div>
     <div id="console" style="height:10%; border:1px solid gray">console</div>
+    
     <!-- touch-action="none" for best results from PEP -->
     <script>
       const canvas = document.getElementById("renderCanvas"); // Get the canvas element
