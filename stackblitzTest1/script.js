@@ -2,7 +2,8 @@
 
 function showMessage() {
     document.getElementById('message').textContent = '外部スクリプトからこんにちは！';
-    consoleTest();
+    document.getElementById("console").innerHTML = "AAA";
+    //consoleTest();
 }
 
 function consoleTest() {
