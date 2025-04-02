@@ -15,7 +15,10 @@
     <script src="script.js"></script>
   </head>
   <body>
-    <canvas id="renderCanvas" touch-action="none" style="height:90%"></canvas>
+    <div style="height:10%;>
+      <canvas id="renderCanvas" touch-action="none"></canvas>
+    </div>
+    <div id="console" style="height:10%; border:1px solid gray">console</div>
     <!-- touch-action="none" for best results from PEP -->
     <script>
       const canvas = document.getElementById("renderCanvas"); // Get the canvas element
@@ -42,8 +45,6 @@
         engine.resize();
       });
     </script>
-
-    <div id="console" style="height:10%; border:1px solid gray">console</div>
     
   </body>
 </html>
