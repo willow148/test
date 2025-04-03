@@ -60,7 +60,7 @@
         const typeval = typeof(arg);
         document.getElementById("console").innerHTML += typeval + "<br />";
         if (typeval === "object") {
-          let keyArray = Object.keys(user);
+          let keyArray = Object.keys(arg);
           for (let key of keyArray) {
             document.getElementById("console").innerHTML += key + "<br />";
           }
