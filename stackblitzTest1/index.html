@@ -57,14 +57,15 @@
       const scene = createScene(); //Call the createScene function
 
       function consoleLog(arg) {
-        document.getElementById("console").innerHTML = arg;
+        const typeval = typeof(arg);
+        document.getElementById("console").innerHTML = typeval + "<br />";
       }
 
       consoleLog("Done");
       const testObj = {key1:"Stinrgあああ", key2:12345};
       const testObj2 = {list: [1, "two", "さん"]};
       alert("aaa");
-      consoleLog(JSON.stringify(testObj2));
+      consoleLog(JSON.stringify(testObj2.list));
 
       // Register a render loop to repeatedly render the scene
       engine.runRenderLoop(function () {
