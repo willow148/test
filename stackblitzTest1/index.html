@@ -48,7 +48,10 @@
       // Add your code here matching the playground format
       const createScene = function () {
         const scene = new BABYLON.Scene(engine);
-        const mesh = BABYLON.ImportMeshAsync("https://assets.babylonjs.com/meshes/box.babylon");
+        const mesh = BABYLON.SceneLoader.ImportMeshAsync("", "https://assets.babylonjs.com/meshes/", "box.babylon")
+          .then((result) => {
+            consoleLog(result.meshes[1].position.x);
+          });
         const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 15, new BABYLON.Vector3(0, 0, 0));
         camera.attachControl(canvas, true);
         const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
