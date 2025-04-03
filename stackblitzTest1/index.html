@@ -52,23 +52,17 @@
         const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 15, new BABYLON.Vector3(0, 0, 0));
         camera.attachControl(canvas, true);
         const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
-        consoleLog(mesh.metadata);
+        consoleLog(mesh.position.x);
         return scene;
       };
       let scene = createScene(); //Call the createScene function
 
       function consoleLog(arg) {
         const typeval = typeof(arg);
-        document.getElementById("console").innerHTML += typeval + "<br />";
+        //document.getElementById("console").innerHTML += typeval + "<br />";
         if (typeval === "object") {
-          document.getElementById("console").innerHTML += "object is " + "<br />";
           let rtn = JSON.stringify(arg);
           document.getElementById("console").innerHTML += rtn + "<br />";
-          //let keyArray = Object.keys(arg);
-          ////document.getElementById("console").innerHTML += "Length of Object is " + keyArray.length + "<br />";     
-          //for (let key of keyArray) {
-          //  document.getElementById("console").innerHTML += key + "<br />";
-          //}
         } else {
           document.getElementById("console").innerHTML += arg + "<br />";
         }
