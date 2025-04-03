@@ -62,6 +62,7 @@
         document.getElementById("console").innerHTML += typeval + "<br />";
         if (typeval === "object") {
           let keyArray = Object.keys(arg);
+          document.getElementById("console").innerHTML += "Length of Object is " + keyArray.length + "<br />";     
           for (let key of keyArray) {
             document.getElementById("console").innerHTML += key + "<br />";
           }
