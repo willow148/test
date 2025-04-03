@@ -65,8 +65,8 @@
       consoleLog("Done");
       let testObj = {key1:"Stinrgあああ", key2:12345};
       const testObj2 = {list: [testObj, testObj]};
-      let rtn = JSON.stringify(scene);
-      //consoleLog(JSON.stringify(scene));
+      //let rtn = JSON.stringify(scene);
+      consoleLog(JSON.stringify(scene));
 
       // Register a render loop to repeatedly render the scene
       engine.runRenderLoop(function () {
