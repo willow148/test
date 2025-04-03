@@ -61,13 +61,13 @@
         const typeval = typeof(arg);
         //document.getElementById("console").innerHTML += typeval + "<br />";
         if (typeval === "object") {
-          const rtn = JSON.stringify(arg);
-          document.getElementById("console").innerHTML += rtn + "<br />";
-          //let keyArray = Object.keys(arg);
+          //const rtn = JSON.stringify(arg);
+          //document.getElementById("console").innerHTML += rtn + "<br />";
+          let keyArray = Object.keys(arg);
           //document.getElementById("console").innerHTML += "Length of Object is " + keyArray.length + "<br />";     
-          //for (let key of keyArray) {
-          //  document.getElementById("console").innerHTML += key + "<br />";
-          //}
+          for (let key of keyArray) {
+            document.getElementById("console").innerHTML += key + "<br />";
+          }
         }
       }
       
