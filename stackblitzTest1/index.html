@@ -38,7 +38,7 @@
     <div style="height:70%">
       <canvas id="renderCanvas" touch-action="none"></canvas>
     </div>
-    <div id="console" style="height:30%; border:1px solid gray">console</div>
+    <div id="console" style="height:30%; border:1px solid gray">console<br /></div>
     
     <!-- touch-action="none" for best results from PEP -->
     <script>
@@ -54,7 +54,7 @@
         const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
         return scene;
       };
-      const scene = createScene(); //Call the createScene function
+      let scene = createScene(); //Call the createScene function
 
       function consoleLog(arg) {
         const typeval = typeof(arg);
@@ -64,7 +64,7 @@
       consoleLog("Done");
       let testObj = {key1:"Stinrgあああ", key2:12345};
       const testObj2 = {list: [testObj, testObj]};
-      consoleLog(JSON.stringify(testObj2));
+      consoleLog(JSON.stringify(scene));
 
       // Register a render loop to repeatedly render the scene
       engine.runRenderLoop(function () {
