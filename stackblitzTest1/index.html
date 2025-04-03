@@ -44,6 +44,7 @@
     <script>
       const canvas = document.getElementById("renderCanvas"); // Get the canvas element
       const engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
+      let scene;
 
       // Add your code here matching the playground format
       const createScene = function () {
@@ -54,7 +55,7 @@
         const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
         return scene;
       };
-      let scene = createScene(); //Call the createScene function
+      scene = createScene(); //Call the createScene function
 
       function consoleLog(arg) {
         const typeval = typeof(arg);
