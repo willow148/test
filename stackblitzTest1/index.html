@@ -50,12 +50,12 @@
         const scene = new BABYLON.Scene(engine);
         const mesh = BABYLON.SceneLoader.ImportMeshAsync("", "https://assets.babylonjs.com/meshes/", "box.babylon")
           .then((result) => {
-            let z = result.meshes[0].position.z;
-            consoleLog(z);
+            let pos = result.meshes[0].position;
+            consoleLog(pos);
             //document.getElementById("console").innerHTML += x + "<br />";
             result.meshes[0].position.x = 0;
             result.meshes[0].position.z = -7;
-            consoleLog(result.meshes[0].position.z);
+            consoleLog(result.meshes[0].position);
           });
         const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 15, new BABYLON.Vector3(0, 0, 0));
         camera.attachControl(canvas, true);
