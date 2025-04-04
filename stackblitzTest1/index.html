@@ -87,7 +87,7 @@
             let rtn = JSON.stringify(arg, replacer);
           } catch(e) {
             if (e instanceof TypeError) {
-              alert("TypeError");
+              alert(e);
               document.getElementById("console").innerHTML += JSON.stringify(e) + "<br />";
             } else {
               alert("Other Exception");
