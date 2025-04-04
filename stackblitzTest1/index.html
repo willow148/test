@@ -34,7 +34,7 @@
     <!-- <script src="script.js"></script> -->
   </head>
   <body>
-    <h2>BabylonTest10</h2>
+    <h2>BabylonTest11</h2>
     <div style="height:60%">
       <canvas id="renderCanvas" touch-action="none"></canvas>
     </div>
@@ -69,7 +69,15 @@
         const typeval = typeof(arg);
         //document.getElementById("console").innerHTML += typeval + "<br />";
         if (typeval === "object") {
-          let rtn = JSON.stringify(arg);
+          try {
+            let rtn = JSON.stringify(arg);
+          } catch(e) {
+            if (e instanceof TypeError) {
+              alert("TypeError");
+            } else {
+              alert("Other Exception");
+            }
+          }
           document.getElementById("console").innerHTML += rtn + "<br />";
         } else {
           document.getElementById("console").innerHTML += arg + "<br />";
