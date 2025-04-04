@@ -34,7 +34,7 @@
     <!-- <script src="script.js"></script> -->
   </head>
   <body>
-    <h2>BabylonTest11</h2>
+    <h2>BabylonTest12</h2>
     <div style="height:60%">
       <canvas id="renderCanvas" touch-action="none"></canvas>
     </div>
@@ -66,11 +66,13 @@
       let scene = createScene(); //Call the createScene function
 
       function consoleLog(arg) {
+        const replacer = (key, value) =>
+          typeof value === "bigint" ? value.toString() : value;
         const typeval = typeof(arg);
         //document.getElementById("console").innerHTML += typeval + "<br />";
         if (typeval === "object") {
           try {
-            let rtn = JSON.stringify(arg);
+            let rtn = JSON.stringify(arg, replacer);
           } catch(e) {
             if (e instanceof TypeError) {
               alert("TypeError");
