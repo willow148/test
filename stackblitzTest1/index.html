@@ -34,7 +34,7 @@
     <script src="cycle.js"></script>
   </head>
   <body>
-    <h2>BabylonTest14</h2>
+    <h2>BabylonTest15</h2>
     <div style="height:60%">
       <canvas id="renderCanvas" touch-action="none"></canvas>
     </div>
@@ -84,12 +84,14 @@
         //document.getElementById("console").innerHTML += typeval + "<br />";
         if (typeval === "object") {
           try {
-            let rtn = JSON.stringify(decycle(arg), replacer);
+            let rtn = JSON.stringify(arg, replacer);
           } catch(e) {
             if (e instanceof TypeError) {
               alert("TypeError");
+              document.getElementById("console").innerHTML += JSON.stringify(e) + "<br />";
             } else {
               alert("Other Exception");
+              document.getElementById("console").innerHTML += JSON.stringify(e) + "<br />";
             }
           }
           document.getElementById("console").innerHTML += rtn + "<br />";
