@@ -34,7 +34,7 @@
     <!-- <script src="script.js"></script> -->
   </head>
   <body>
-    <h2>BabylonTest9</h2>
+    <h2>BabylonTest10</h2>
     <div style="height:60%">
       <canvas id="renderCanvas" touch-action="none"></canvas>
     </div>
@@ -50,7 +50,7 @@
         const scene = new BABYLON.Scene(engine);
         const mesh = BABYLON.SceneLoader.ImportMeshAsync("", "https://assets.babylonjs.com/meshes/", "box.babylon")
           .then((result) => {
-            let pos = result.meshes[0].position;
+            let pos = result.meshes[0];
             consoleLog(pos);
             //document.getElementById("console").innerHTML += x + "<br />";
             result.meshes[0].position.x = 0;
