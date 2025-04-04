@@ -34,7 +34,7 @@
     <script src="cycle.js"></script>
   </head>
   <body>
-    <h2>BabylonTest15</h2>
+    <h2>BabylonTest16</h2>
     <div style="height:60%">
       <canvas id="renderCanvas" touch-action="none"></canvas>
     </div>
@@ -84,7 +84,7 @@
         //document.getElementById("console").innerHTML += typeval + "<br />";
         if (typeval === "object") {
           try {
-            let rtn = JSON.stringify(arg, replacer);
+            let rtn = JSON.stringify(JSON.decycle(arg), replacer);
           } catch(e) {
             if (e instanceof TypeError) {
               alert(e);
