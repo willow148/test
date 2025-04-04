@@ -34,7 +34,7 @@
     <!-- <script src="script.js"></script> -->
   </head>
   <body>
-    <h2>BabylonTest12</h2>
+    <h2>BabylonTest13</h2>
     <div style="height:60%">
       <canvas id="renderCanvas" touch-action="none"></canvas>
     </div>
@@ -68,11 +68,23 @@
       function consoleLog(arg) {
         const replacer = (key, value) =>
           typeof value === "bigint" ? value.toString() : value;
+        const getCircularReplacer = () => {
+          const seen = new WeakSet();
+          return (key, value) => {
+            if (typeof value === "object" && value !== null) {
+              if (seen.has(value)) {
+                return;
+              }
+              seen.add(value);
+            }
+            return value;
+          };
+        };
         const typeval = typeof(arg);
         //document.getElementById("console").innerHTML += typeval + "<br />";
         if (typeval === "object") {
           try {
-            let rtn = JSON.stringify(arg, replacer);
+            let rtn = JSON.stringify(arg, getCircularReplacer);
           } catch(e) {
             if (e instanceof TypeError) {
               alert("TypeError");
