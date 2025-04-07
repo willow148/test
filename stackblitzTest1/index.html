@@ -31,7 +31,7 @@
     <script src="https://cdn.babylonjs.com/babylon.js"></script>
     <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
     <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
-    <script src="cycle.js"></script>
+    <script src="consoleLog.js"></script>
   </head>
   <body>
     <h2>BabylonTest17</h2>
@@ -62,39 +62,6 @@
         return scene;
       };
       let scene = createScene(); //Call the createScene function
-
-      function consoleLog(arg) {
-        const replacer = (key, value) =>
-          typeof value === "bigint" ? value.toString() : value;
-        const getCircularReplacer = () => {
-          const seen = new WeakSet();
-          return (key, value) => {
-            if (typeof value === "object" && value !== null) {
-              if (seen.has(value)) {
-                return;
-              }
-              seen.add(value);
-            }
-            return value;
-          };
-        };
-        const typeval = typeof(arg);
-        if (typeval === "object") {
-          let rtn;
-          try {
-            rtn = JSON.stringify(JSON.decycle(arg), replacer);
-          } catch(e) {
-            if (e instanceof TypeError) {
-              document.getElementById("console").innerHTML += JSON.stringify(e) + "<br />";
-            } else {
-              document.getElementById("console").innerHTML += JSON.stringify(e) + "<br />";
-            }
-          }
-          document.getElementById("console").innerHTML += rtn + "<br />";
-        } else {
-          document.getElementById("console").innerHTML += arg + "<br />";
-        }
-      }
 
       // Register a render loop to repeatedly render the scene
       engine.runRenderLoop(function () {
