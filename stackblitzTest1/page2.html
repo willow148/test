@@ -1,19 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Other page</title>
+    <title>Home</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <!--
+      Need a visual blank slate?
+      Remove all code in `styles.css`!
+    -->
+    <!--
     <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
+    -->
+    <style>
+      html,
+      body {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #renderCanvas {
+        width: 100%;
+        height: 100%;
+        touch-action: none;
+      }
+    </style>
+    
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+    <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+    <script src="cycle.js"></script>
   </head>
   <body>
-    <nav>
-      <a href="/stackblitzTest1">Home</a>
-      <a href="./page2.html" aria-current="page">Other page</a>
-    </nav>
-    <main>
-      <h1>My other page</h1>
-    </main>
+    <h2>BabylonTest17</h2>
+    <div style="height:60%">
+      <canvas id="renderCanvas" touch-action="none"></canvas>
+    </div>
+    <div id="console" style="height:40%; border:1px solid gray; overflow:scroll;">console<br /></div>
+    
+    <!-- touch-action="none" for best results from PEP -->
+    <script>
+      const canvas = document.getElementById("renderCanvas"); // Get the canvas element
+      const engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
+
+      // Add your code here matching the playground format
+      const createScene = function () {
+        const scene = new BABYLON.Scene(engine);
+        const mesh = BABYLON.SceneLoader.ImportMeshAsync("", "https://assets.babylonjs.com/meshes/", "box.babylon")
+          .then((result) => {
+            let pos = result.meshes[0].position;
+            consoleLog(pos);
+            result.meshes[0].position.x = 0;
+            result.meshes[0].position.z = -7;
+            consoleLog(result.meshes[0].position);
+          });
+        const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 15, new BABYLON.Vector3(0, 0, 0));
+        camera.attachControl(canvas, true);
+        const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
+        return scene;
+      };
+      let scene = createScene(); //Call the createScene function
+
+      function consoleLog(arg) {
+        const replacer = (key, value) =>
+          typeof value === "bigint" ? value.toString() : value;
+        const getCircularReplacer = () => {
+          const seen = new WeakSet();
+          return (key, value) => {
+            if (typeof value === "object" && value !== null) {
+              if (seen.has(value)) {
+                return;
+              }
+              seen.add(value);
+            }
+            return value;
+          };
+        };
+        const typeval = typeof(arg);
+        if (typeval === "object") {
+          let rtn;
+          try {
+            rtn = JSON.stringify(JSON.decycle(arg), replacer);
+          } catch(e) {
+            if (e instanceof TypeError) {
+              document.getElementById("console").innerHTML += JSON.stringify(e) + "<br />";
+            } else {
+              document.getElementById("console").innerHTML += JSON.stringify(e) + "<br />";
+            }
+          }
+          document.getElementById("console").innerHTML += rtn + "<br />";
+        } else {
+          document.getElementById("console").innerHTML += arg + "<br />";
+        }
+      }
+
+      // Register a render loop to repeatedly render the scene
+      engine.runRenderLoop(function () {
+        scene.render();
+      });
+
+      // Watch for browser/canvas resize events
+      window.addEventListener("resize", function () {
+        engine.resize();
+      });
+    </script>
+    
   </body>
 </html>
