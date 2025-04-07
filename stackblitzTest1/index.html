@@ -59,7 +59,7 @@
             consoleLog(result.meshes[0].position);
           });
         */
-        let pos = result.meshes[0].position;
+        let pos = mesh.meshes[0].position;
         consoleLog(pos);
         const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 15, new BABYLON.Vector3(0, 0, 0));
         camera.attachControl(canvas, true);
