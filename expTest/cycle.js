@@ -21,8 +21,9 @@
     $ref, decycle, forEach, get, indexOf, isArray, keys, length, push,
     retrocycle, set, stringify, test
 */
+export default function () {
 
-if (typeof JSON.decycle !== "function") {
+  if (typeof JSON.decycle !== "function") {
     JSON.decycle = function decycle(object, replacer) {
         "use strict";
 
@@ -179,4 +180,5 @@ if (typeof JSON.retrocycle !== "function") {
         }($));
         return $;
     };
+  }
 }
