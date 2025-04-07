@@ -1,1 +1,5 @@
-alert("Hello!!");
+function Alert(msg) {
+  alert(msg);
+}
+
+Alert("Hello");
