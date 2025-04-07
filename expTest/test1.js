@@ -1,3 +1,4 @@
+import App from './cycle';
 
 function consoleLog(arg) {
   const replacer = (key, value) =>
