@@ -39,6 +39,10 @@
       const mesh = new THREE.Mesh(new THREE.BoxGeometry(300, 300, 300), new THREE.MeshNormalMaterial());
       scene.add(mesh);
 
+      // 軸を追加する。
+      const axesHelper = new THREE.AxesHelper(1000);
+      scene.add(axesHelper);
+
       tick();
 
       // 毎フレーム時に実行されるループイベントです
