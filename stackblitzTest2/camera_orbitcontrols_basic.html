@@ -12,8 +12,14 @@
 
   </head>
   <body>
-    
-    <canvas id="myCanvas"></canvas>
+    <div style="display:flex;">
+      <div>
+        <canvas id="myCanvas"></canvas>
+      </div>
+      <div id="console" style="width:70px; border:1px solid gray; overflow:scroll;">
+        console<br />
+      </div>
+    </div>
     <script type="module">
       import * as THREE from "three";
       import { OrbitControls } from "three/addons/controls/OrbitControls.js";
@@ -57,6 +63,5 @@
         requestAnimationFrame(tick);
       }
     </script>
-    
   </body>
 </html>
