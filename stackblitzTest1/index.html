@@ -46,30 +46,6 @@
       const canvas = document.getElementById("renderCanvas"); // Get the canvas element
       const engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
       engine.setSize(960, 540);
-
-      // Add your code here matching the playground format
-      const createScene = function () {
-        const scene = new BABYLON.Scene(engine);
-        const mesh = BABYLON.MeshBuilder.CreateBox("box", {});
-        /*
-        const mesh = BABYLON.SceneLoader.ImportMeshAsync("", "https://assets.babylonjs.com/meshes/", "box.babylon")
-          .then((result) => {
-            let pos = result.meshes[0].position;
-            consoleLog(pos);
-            result.meshes[0].position.x = 0;
-            result.meshes[0].position.z = -7;
-            consoleLog(result.meshes[0].position);
-          });
-        */
-        //let pos = mesh.meshes[0].position;
-        consoleLog(mesh.position);
-        const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 15, new BABYLON.Vector3(0, 0, 0));
-        camera.attachControl(canvas, true);
-        const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
-        return scene;
-      };
-      //let scene = createScene(); //Call the createScene function
-
       const scene = new BABYLON.Scene(engine);
       const mesh = BABYLON.MeshBuilder.CreateBox("box", {});
       const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 15, new BABYLON.Vector3(0, 0, 0));
