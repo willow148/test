@@ -14,9 +14,10 @@
     <div style="height:100%">
       <canvas id="renderCanvas" touch-action="none"></canvas>
     </div>
-    <div id="console" style="height:0%; border:1px solid gray; overflow:scroll;">console<br /></div>
+    <div id="console" style="height:0%; border:1px solid gray; overflow:scroll;">
+      console<br />
+    </div>
     
-    <!-- touch-action="none" for best results from PEP -->
     <script>
       const canvas = document.getElementById("renderCanvas"); // Get the canvas element
       const engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
@@ -36,7 +37,6 @@
       window.addEventListener("resize", function () {
         engine.resize();
       });
-    </script>
-    
+    </script>   
   </body>
 </html>
