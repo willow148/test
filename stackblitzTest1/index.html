@@ -20,21 +20,38 @@
       </div>
     </div>
     <script>
+      // サイズを指定
+      const width = 960;
+      const height = 540;
+
+      // レンダラー（エンジン）を作成
       const canvas = document.getElementById("renderCanvas"); // Get the canvas element
       const engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
-      engine.setSize(960, 540);
+      engine.setSize(width, height);
+
+      // シーンを作成
       const scene = new BABYLON.Scene(engine);
-      const mesh = BABYLON.MeshBuilder.CreateBox("box", {});
-      const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 15, new BABYLON.Vector3(0, 0, 0));
+
+      // カメラを作成
+      const camera = new BABYLON.ArcRotateCamera(
+        "camera", -Math.PI / 2, Math.PI / 2.5, 15, new BABYLON.Vector3(0, 0, 0)
+      );
+      
+      // カメラコントローラーを作成
       camera.attachControl(canvas, true);
+
+      // メッシュを作成します
+      const mesh = BABYLON.MeshBuilder.CreateBox("box", {});
+
+      // ライトを作成
       const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
 
-      // Register a render loop to repeatedly render the scene
+      // フレームごとに実行されるループ
       engine.runRenderLoop(function () {
         scene.render();
       });
 
-      // Watch for browser/canvas resize events
+      // リサイズ時のイベント処理
       window.addEventListener("resize", function () {
         engine.resize();
       });
