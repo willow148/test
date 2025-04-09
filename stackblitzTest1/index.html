@@ -5,11 +5,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="styles.css" />
-    <!--
+
     <script src="https://cdn.babylonjs.com/babylon.js"></script>
     <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
-    -->
+
     <!-- <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script> -->
+    <!--
     <script type="importmap">
       {
         "imports": {
@@ -17,6 +18,7 @@
         }
       }
     </script>
+    -->
     <script src="consoleLog.js"></script>
   </head>
   <body>
@@ -28,8 +30,11 @@
         console<br />
       </div>
     </div>
+    <script>
+    <!--
     <script type="module">
-      import * as BABYLON from "babylonjs";
+    -->
+      //import * as BABYLON from "babylonjs";
       
       // サイズを指定
       const width = 960;
@@ -37,10 +42,10 @@
 
       // レンダラー（エンジン）を作成
       const canvas = document.getElementById("renderCanvas");
-      //const engine = new BABYLON.Engine(canvas, true);
+      const engine = new BABYLON.Engine(canvas, true);
       consoleLog("Hello !!!");
       //consoleLog(engine);
-      //engine.setSize(width, height);
+      engine.setSize(width, height);
 
       // シーンを作成
       //const scene = new BABYLON.Scene(engine);
