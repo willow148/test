@@ -41,7 +41,7 @@
       engine.setSize(width, height);
 
       // シーンを作成
-      const scene = new BABYLON.Scene(engine);
+      //const scene = new BABYLON.Scene(engine);
 
       // カメラを作成
       //const camera = new BABYLON.ArcRotateCamera(
@@ -58,14 +58,14 @@
       //const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
 
       // フレームごとに実行されるループ
-      engine.runRenderLoop(function () {
-        scene.render();
-      });
+      //engine.runRenderLoop(function () {
+      //  scene.render();
+      //});
 
       // リサイズ時のイベント処理
-      window.addEventListener("resize", function () {
-        engine.resize();
-      });
+      //window.addEventListener("resize", function () {
+      //  engine.resize();
+      //});
     </script>   
   </body>
 </html>
