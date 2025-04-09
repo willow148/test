@@ -44,18 +44,18 @@
       const scene = new BABYLON.Scene(engine);
 
       // カメラを作成
-      const camera = new BABYLON.ArcRotateCamera(
-        "camera", -Math.PI / 2, Math.PI / 2.5, 15, new BABYLON.Vector3(0, 0, 0)
-      );
+      //const camera = new BABYLON.ArcRotateCamera(
+      //  "camera", -Math.PI / 2, Math.PI / 2.5, 15, new BABYLON.Vector3(0, 0, 0)
+      //);
       
       // カメラコントローラーを作成
-      camera.attachControl(canvas, true);
+      //camera.attachControl(canvas, true);
 
       // メッシュを作成します
-      const mesh = BABYLON.MeshBuilder.CreateBox("box", {});
+      //const mesh = BABYLON.MeshBuilder.CreateBox("box", {});
 
       // ライトを作成
-      const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
+      //const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
 
       // フレームごとに実行されるループ
       engine.runRenderLoop(function () {
