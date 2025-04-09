@@ -36,8 +36,9 @@
       const height = 540;
 
       // レンダラー（エンジン）を作成
-      const canvas = document.getElementById("renderCanvas"); // Get the canvas element
-      const engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
+      const canvas = document.getElementById("renderCanvas");
+      const engine = new BABYLON.Engine(canvas, true);
+      consoleLog(engine);
       engine.setSize(width, height);
 
       // シーンを作成
