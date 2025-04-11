@@ -56,11 +56,11 @@
       // カメラコントローラーを作成
       camera.attachControl(canvas, true);
 
-      // メッシュを作成します
-      const mesh = BABYLON.MeshBuilder.CreateBox("box", {});
-
       // ライトを作成
       const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
+      
+      // メッシュを作成します
+      const mesh = BABYLON.MeshBuilder.CreateBox("box", {});
 
       // フレームごとに実行されるループ
       engine.runRenderLoop(function () {
