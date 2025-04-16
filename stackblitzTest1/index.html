@@ -60,7 +60,19 @@
       const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
       
       // メッシュを作成します
-      const mesh = BABYLON.MeshBuilder.CreateBox("box", {});
+      const faceColors = new Array(6);
+      faceColors[0] = new BABYLON.Color4(1, 0, 0, 0);
+      faceColors[1] = new BABYLON.Color4(1, 1, 0, 0);
+      faceColors[2] = new BABYLON.Color4(1, 1, 1, 0);
+      faceColors[3] = new BABYLON.Color4(0, 0, 0, 1);
+      faceColors[4] = new BABYLON.Color4(1, 0, 1, 1);
+      faceColors[5] = new BABYLON.Color4(0, 1, 0, 1);
+      const options = {
+        faceColors: faceColors,
+        //wrap: true,
+      };
+      const mesh = BABYLON.MeshBuilder.CreateBox("box", options);
+      //const mesh = BABYLON.MeshBuilder.CreateBox("box", {});
 
       // フレームごとに実行されるループ
       engine.runRenderLoop(function () {
