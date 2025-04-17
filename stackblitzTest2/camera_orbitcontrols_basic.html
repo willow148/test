@@ -49,8 +49,8 @@
 
       // ライトを作成
       //const light = new THREE.HemisphereLight(0xff0000, 0x000000, 1.0);
-      const light = new THREE.PointLight(0xFFFFFF, 2, 50, 1.0);
-      scene.add(light);
+      //const light = new THREE.PointLight(0xFFFFFF, 2, 50, 1.0);
+      //scene.add(light);
 
       // 形状とマテリアルからメッシュを作成します
       const geometryCube = new THREE.BoxGeometry(100, 100, 100);
@@ -65,6 +65,9 @@
       const mesh = new THREE.Mesh(geometryCube, materialColors);
       //const mesh = new THREE.Mesh(new THREE.BoxGeometry(300, 300, 300), new THREE.MeshNormalMaterial());
       scene.add(mesh);
+
+      const light = new THREE.PointLight(0xFFFFFF, 2, 50, 1.0);
+      scene.add(light);
 
       // 軸を追加する。
       const axesHelper = new THREE.AxesHelper(1000);
