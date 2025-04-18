@@ -60,6 +60,13 @@
       light.castShadow = true; //影を許可
       scene.add(light);
 
+      // 床を作成
+      const meshFloor = new THREE.Mesh(
+        new THREE.BoxGeometry(2000, 0.1, 2000),
+        new THREE.MeshStandardMaterial({ color: 0x808080, roughness: 0.0 }),
+      );
+      scene.add(meshFloor);
+
       // 形状とマテリアルからメッシュを作成します
       const geometryCube = new THREE.BoxGeometry(1, 1, 1);
       const geometryTorus = new THREE.TorusKnotGeometry(3, 1, 100, 16);
