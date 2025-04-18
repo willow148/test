@@ -11,6 +11,7 @@
     </script>
     <script type="module">
       import * as THREE from "three";
+      import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
       // サイズを指定
       const width = 960;
@@ -30,6 +31,9 @@
       const camera = new THREE.PerspectiveCamera(45, width / height);
       camera.position.set(20, 20, 20);
       camera.lookAt(new THREE.Vector3(0, 0, 0));
+      
+      // カメラコントローラーを作成
+      const controls = new OrbitControls(camera, canvasElement);
 
       // 床を作成
       const meshFloor = new THREE.Mesh(
