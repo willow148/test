@@ -57,8 +57,9 @@
       // new THREE.DirectionalLight(色, 光の強さ)
       //const light = new THREE.DirectionalLight(0xffffff, 0.5);
       //light.position.set(3.0, 8.0, 3.0);
-      const light = new THREE.SpotLight( 0xf0f0f0 );
-      light.position.set( -8, 15, 17 );
+      //const light = new THREE.SpotLight( 0xf0f0f0 );
+      //light.position.set( -8, 15, 17 );
+      const light = new THREE.PointLight(0xFFFFFF, 2, 50, 1.0);
       
       light.castShadow = true; //影を許可
       scene.add(light);
