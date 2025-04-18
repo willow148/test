@@ -57,6 +57,8 @@
 
       // 形状とマテリアルからメッシュを作成します
       const geometryCube = new THREE.BoxGeometry(100, 100, 100);
+      const standardMaterial = new THREE.MeshStandardMaterial({ color: 0x808080, roughness: 0.0 }),
+
       const materialColors = [
         new THREE.MeshBasicMaterial({color: 0xff0000}),
         new THREE.MeshBasicMaterial({color: 0xffff00}),
@@ -65,7 +67,8 @@
         new THREE.MeshBasicMaterial({color: 0xff00ff}),
         new THREE.MeshBasicMaterial({color: 0x00ff00}),
       ];
-      const mesh = new THREE.Mesh(geometryCube, materialColors);
+      const mesh = new THREE.Mesh(geometryCube, standardMaterial);
+      //const mesh = new THREE.Mesh(geometryCube, materialColors);
       //const mesh = new THREE.Mesh(new THREE.BoxGeometry(300, 300, 300), new THREE.MeshNormalMaterial());
       scene.add(mesh);
 
