@@ -55,6 +55,7 @@
       
       // new THREE.DirectionalLight(色, 光の強さ)
       const light = new THREE.DirectionalLight(0xffffff, 5);
+      light.position.set(0, 6.0, 0);
       scene.add(light);
 
       // 形状とマテリアルからメッシュを作成します
