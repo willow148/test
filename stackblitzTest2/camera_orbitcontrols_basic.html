@@ -60,7 +60,7 @@
       //const light = new THREE.SpotLight( 0xf0f0f0 );
       //light.position.set( -8, 15, 17 );
       const light = new THREE.PointLight(0xFFFFFF, 5); //PointLight(0xFFFFFF, 2, 50, 1.0);
-      light.position.set(3.0, 8.0, 3.0);
+      light.position.set(3.0, 4.0, 3.0);
       
       light.castShadow = true; //影を許可
       scene.add(light);
@@ -89,7 +89,7 @@
       ];
       //const mesh = new THREE.Mesh(geometryTorus, standardMaterial);
       const mesh = new THREE.Mesh(geometryCube, standardMaterial);
-      mesh.position.set(0, 5, 0);
+      mesh.position.set(0, 3, 0);
       //const mesh = new THREE.Mesh(new THREE.BoxGeometry(300, 300, 300), new THREE.MeshNormalMaterial());
       mesh.castShadow = true; //影を許可
       scene.add(mesh);
