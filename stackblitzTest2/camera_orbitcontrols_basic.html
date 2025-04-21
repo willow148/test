@@ -51,6 +51,8 @@
       const controls = new OrbitControls(camera, canvasElement);
 
       // ライトを作成
+      const ambientLight = new THREE.AmbientLigh();
+      scene.add(ambientLight);
       //const light = new THREE.HemisphereLight(0xff0000, 0x000000, 1.0);
       //const light = new THREE.PointLight(0xFFFFFF, 2, 5, 1.0);
       
