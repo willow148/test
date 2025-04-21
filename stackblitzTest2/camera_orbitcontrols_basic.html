@@ -52,6 +52,7 @@
 
       // ライトを作成
       const ambientLight = new THREE.AmbientLight(0x0c0c0c);
+      ambientLight.castShadow = true; //影を許可
       scene.add(ambientLight);
       //const light = new THREE.HemisphereLight(0xff0000, 0x000000, 1.0);
       //const light = new THREE.PointLight(0xFFFFFF, 2, 5, 1.0);
