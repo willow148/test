@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="js">
+  <head>
+    <title>Babylon.js Test</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+
+    <!-- <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script> -->
+    <!--
+    <script type="importmap">
+      {
+        "imports": {
+          "babylonjs": "https://cdn.babylonjs.com/babylon.js"
+        }
+      }
+    </script>
+    -->
+    <script src="consoleLog.js"></script>
+  </head>
+  <body>
+    <div style="display:flex;">
+      <div>
+        <canvas id="renderCanvas" touch-action="none"></canvas>
+      </div>
+      <div id="console" style="width:200px; height:600px; border:1px solid gray; overflow:scroll;">
+        console<br />
+      </div>
+    </div>
+    <script>
+    //<script type="module">
+      //import * as BABYLON from "babylonjs";
+      
+      // サイズを指定
+      const width = 960;
+      const height = 540;
+
+      // レンダラー（エンジン）を作成
+      const canvas = document.getElementById("renderCanvas");
+      const engine = new BABYLON.Engine(canvas, true);
+      //consoleLog("Hello !!!");
+      //consoleLog(engine);
+      engine.setSize(width, height);
+
+      // シーンを作成
+      const scene = new BABYLON.Scene(engine);
+
+      // カメラを作成
+      const camera = new BABYLON.ArcRotateCamera(
+        "camera", -Math.PI / 2, Math.PI / 2.5, 15, new BABYLON.Vector3(0, 0, 0)
+      );
+      
+      // カメラコントローラーを作成
+      camera.attachControl(canvas, true);
+
+      // ライトを作成
+      const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 1), scene);
+      //const light = new BABYLON.PointLight("light", new BABYLON.Vector3(0, 1, 0), scene);
+      //light.diffuse = new BABYLON.Color3(1, 0, 0);
+      //light.specular = new BABYLON.Color3(0, 1, 0);
+      consoleLog(light);
+      
+      // メッシュを作成します
+      const faceColors = new Array(6);
+      faceColors[0] = new BABYLON.Color4(1, 0, 0, 0);
+      faceColors[1] = new BABYLON.Color4(1, 1, 0, 0);
+      faceColors[2] = new BABYLON.Color4(1, 1, 1, 0);
+      faceColors[3] = new BABYLON.Color4(0, 0, 0, 1);
+      faceColors[4] = new BABYLON.Color4(1, 0, 1, 1);
+      faceColors[5] = new BABYLON.Color4(0, 1, 0, 1);
+      const options = {
+        faceColors: faceColors,
+        //wrap: true,
+      };
+      const mesh = BABYLON.MeshBuilder.CreateBox("box", options);
+      //const mesh = BABYLON.MeshBuilder.CreateBox("box", {});
+
+      // フレームごとに実行されるループ
+      engine.runRenderLoop(function () {
+        scene.render();
+      });
+
+      // リサイズ時のイベント処理
+      window.addEventListener("resize", function () {
+        engine.resize();
+      });
+    </script>   
+  </body>
+</html>
